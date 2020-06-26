@@ -7,6 +7,10 @@ import sys
 import os
 import math
 
+
+#LOCAL IMPORTS:
+import image_handling as ih
+
 def get_imgs(download, n):
     #taking user input
     print("What do you want to download?")
@@ -72,4 +76,5 @@ if __name__ == "__main__":
     download = input('What do you want to downlaod')
     n = input("How many images")
     get_imgs(download, n)
-    
+    imgHandler = ih.imgHandler(download,os.getcwd())
+    imgHandler.resize(128,128)
