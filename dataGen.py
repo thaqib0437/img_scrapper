@@ -13,7 +13,7 @@ import image_handling as ih
 
 def get_imgs(download, n):
     #taking user input
-    print("What do you want to download?")
+    print("Downloading...")
     site = 'https://www.google.com/search?tbm=isch&q='+download
     NUM_INPUTS = int(n)
     #providing driver path
@@ -73,8 +73,8 @@ def get_imgs(download, n):
 
 
 if __name__ == "__main__":
-    download = input('What do you want to downlaod')
-    n = input("How many images")
+    download = input('What do you want to downlaod\n')
+    n = input("How many images\n")
     get_imgs(download, n)
     imgHandler = ih.imgHandler(download,os.getcwd())
     imgHandler.edgeDetect(512,512)
