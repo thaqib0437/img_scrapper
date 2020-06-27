@@ -62,7 +62,7 @@ def get_imgs(download, n):
         #print(i['src'])
         try:
             #passing image urls one by one and downloading
-            urllib.request.urlretrieve(i['src'], str(cwd)+ '/' + download +'/'+ str(count)+".jpg")
+            urllib.request.urlretrieve(i['src'], str(cwd)+ '/' + download +'/'+ str(count)+".png")
             count+=1
             print("Number of images downloaded = "+str(count),end='\r')
         except Exception as e:
@@ -77,4 +77,4 @@ if __name__ == "__main__":
     n = input("How many images")
     get_imgs(download, n)
     imgHandler = ih.imgHandler(download,os.getcwd())
-    imgHandler.resize(128,128)
+    imgHandler.greyScale(128,128)
