@@ -13,7 +13,6 @@ class imgHandler(object):
         if(len(size) is not 2 and size is not isinstance(size,int)):
             print("Size not valid \n  USAGE: imgHandler.resize(x,y) x,y are ints \n ")
             return 404
-        print(os.getcwd())
         for image in self.images:
             img = Image.open(image)
             new_img = img.resize(size)
@@ -34,7 +33,6 @@ class imgHandler(object):
         if(len(size) is not 2 and size is not isinstance(size,int)):
             print("Size not valid \n  USAGE: imgHandler.resize(x,y) x,y are ints \n ")
             return 404
-        print(os.getcwd())
         for image in self.images:
             img = Image.open(image)
             img = img.convert('L')
@@ -48,14 +46,13 @@ class imgHandler(object):
                     pass
                 pass
             else:
-                new_img.save(str(size) + '_' + image)
+                new_img.save('grayscale_'+str(size) + '_' + image)
         return 0
     def edgeDetect(self,*size):
         os.chdir(self.dirc)
         if(len(size) is not 2 and size is not isinstance(size,int)):
             print("Size not valid \n  USAGE: imgHandler.resize(x,y) x,y are ints \n ")
             return 404
-        print(os.getcwd())
         for image in self.images:
 
             img = Image.open(image)
@@ -71,12 +68,10 @@ class imgHandler(object):
                     pass
                 pass
             else:
-                new_img.save(str(size) + '_' + image)
+                new_img.save('edge_'+str(size) + '_' + image)
         return 0
 
-    #TODO geckodriver download locally, custom kernel
-    
-
+    #TODO geckodriver download locally
 
 
 

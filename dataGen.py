@@ -77,4 +77,6 @@ if __name__ == "__main__":
     n = input("How many images")
     get_imgs(download, n)
     imgHandler = ih.imgHandler(download,os.getcwd())
-    imgHandler.greyScale(128,128)
+    imgHandler.edgeDetect(512,512)
+
+
