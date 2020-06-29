@@ -76,7 +76,7 @@ if __name__ == "__main__":
     download = input('What do you want to downlaod\n')
     n = input("How many images\n")
     get_imgs(download, n)
-    imgHandler = ih.imgHandler(download,os.getcwd())
+    imgHandler = ih.imgHandler(download,os.getcwd(),True)
     imgHandler.edgeDetect(512,512)
 
 
